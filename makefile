@@ -39,6 +39,9 @@ endif
 # Basic Configuration
 #
 APPNAME=OTA_FirmwareUpgrade
+APP_VERSION_APP_ID = 0x1234
+APP_VERSION_MAJOR = 1
+APP_VERSION_MINOR = 0
 TOOLCHAIN=GCC_ARM
 CONFIG=Debug
 VERBOSE=
@@ -48,7 +51,6 @@ TARGET=CYW920819EVB-02
 
 SUPPORTED_TARGETS = \
   CYW920819EVB-02 \
-  CYW920721B2EVK-03 \
   CYW920721B2EVK-02 \
   CYW920820EVB-02 \
   CYBT-243053-EVAL \
@@ -61,7 +63,9 @@ SUPPORTED_TARGETS = \
   CYW920706WCDEVAL \
   CYBT-353027-EVAL \
   CYBT-343026-EVAL \
+  CYBT-343052-EVAL \
   CYW920735Q60EVB-01 \
+  CYW920835M2EVB-01 \
   CYW920721M2EVK-01 \
   CYW920721M2EVK-02
 
@@ -172,6 +176,6 @@ CY_BT_APP_TOOLS=WsOtaUpgrade
 
 -include internal.mk
 ifeq ($(filter $(TARGET),$(SUPPORTED_TARGETS)),)
-$(error TARGET $(TARGET) not supported for this code example)
+$(error TARGET $(TARGET) not supported for this application. Edit SUPPORTED_TARGETS in the code example makefile to add new BSPs)
 endif
 include $(CY_TOOLS_DIR)/make/start.mk

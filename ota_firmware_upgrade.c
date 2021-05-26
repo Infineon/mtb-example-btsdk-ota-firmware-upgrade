@@ -181,7 +181,7 @@ const wiced_transport_cfg_t  transport_cfg =
     },
     .rx_buff_pool_cfg =
     {
-#if ( defined(CYW20706A2) || defined(CYW20735B1) || defined(CYW20735B0) )
+#if ( defined(CYW20706A2) || defined(CYW20735B1) || defined(CYW20835B1) || defined(CYW20735B0) )
         .buffer_size  = 0,
         .buffer_count = 0
 #else
@@ -250,7 +250,7 @@ void app_init(void)
 {
     wiced_bt_gatt_status_t gatt_status;
     wiced_result_t         result;
-#if !defined(CYW20735B1) && !defined(CYW20819A1) && !defined(CYW20719B2) && !defined(CYW20721B2)
+#if !defined(CYW20735B1) && !defined(CYW20835B1) && !defined(CYW20819A1) && !defined(CYW20719B2) && !defined(CYW20721B2)
     /* Initialize wiced app */
     wiced_bt_app_init();
 #endif
