@@ -209,7 +209,7 @@ static wiced_bt_gatt_status_t   app_gatts_req_read_handler(uint16_t conn_id, wic
 static wiced_bt_gatt_status_t   app_gatts_req_write_handler(uint16_t conn_id, wiced_bt_gatt_write_t *p_write_data);
 static wiced_bt_gatt_status_t   app_indication_cfm_handler(uint16_t conn_id, uint16_t handle);
 
-wiced_timer_t app_timer;
+wiced_timer_t ota_app_timer;
 uint16_t      app_conn_id = 0;
 
 extern const wiced_bt_cfg_settings_t app_cfg_settings;
@@ -275,8 +275,8 @@ void app_init(void)
 
 #ifdef WICED_BT_TRACE_ENABLE
     /* Starting the app timer */
-    wiced_init_timer(&app_timer, app_timeout, 0, WICED_SECONDS_PERIODIC_TIMER);
-    result = wiced_start_timer(&app_timer, 1);
+    wiced_init_timer(&ota_app_timer, app_timeout, 0, WICED_SECONDS_PERIODIC_TIMER);
+    result = wiced_start_timer(&ota_app_timer, 1);
     if (result != WICED_SUCCESS)
     {
         WICED_BT_TRACE("%s: wiced_start_timer failed, result:%d \n", __func__, result);
