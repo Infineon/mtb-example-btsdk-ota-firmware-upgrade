@@ -276,11 +276,7 @@ void app_init(void)
 #ifdef WICED_BT_TRACE_ENABLE
     /* Starting the app timer */
     wiced_init_timer(&ota_app_timer, app_timeout, 0, WICED_SECONDS_PERIODIC_TIMER);
-    result = wiced_start_timer(&ota_app_timer, 1);
-    if (result != WICED_SUCCESS)
-    {
-        WICED_BT_TRACE("%s: wiced_start_timer failed, result:%d \n", __func__, result);
-    }
+    wiced_start_timer(&ota_app_timer, 1);
 
 #endif
 
