@@ -81,7 +81,7 @@
 #include "wiced_transport.h"
 #include "wiced_bt_ota_firmware_upgrade.h"
 #include "wiced_bt_stack.h"
-#if ( defined(CYW20706A2) || defined(CYW20719B1) || defined(CYW20719B0) || defined(CYW20721B1) || defined(CYW20735B0) || defined(CYW43012C0) )
+#if ( defined(CYW20706A2) || defined(CYW20719B1) || defined(CYW20721B1) || defined(CYW43012C0) )
 #include "wiced_bt_app_common.h"
 #endif
 #include "string.h"
@@ -181,7 +181,7 @@ const wiced_transport_cfg_t  transport_cfg =
     },
     .rx_buff_pool_cfg =
     {
-#if ( defined(CYW20706A2) || defined(CYW20735B1) || defined(CYW20835B1) || defined(CYW20735B0) )
+#if ( defined(CYW20706A2) || defined(CYW20835B1) )
         .buffer_size  = 0,
         .buffer_count = 0
 #else
@@ -220,9 +220,9 @@ extern const wiced_bt_cfg_buf_pool_t app_buf_pools[];
  ******************************************************************************/
 
 /*
- *  Entry point to the application. Set device configuration and start BT
+ *  Entry point to the application. Set device configuration and start Bluetooth
  *  stack initialization.  The actual application initialization will happen
- *  when stack reports that BT device is ready.
+ *  when stack reports that Bluetooth device is ready.
  */
 APPLICATION_START()
 {
@@ -250,7 +250,7 @@ void app_init(void)
 {
     wiced_bt_gatt_status_t gatt_status;
     wiced_result_t         result;
-#if !defined(CYW20735B1) && !defined(CYW20835B1) && !defined(CYW20819A1) && !defined(CYW20719B2) && !defined(CYW20721B2)
+#if !defined(CYW20835B1) && !defined(CYW20819A1) && !defined(CYW20719B2) && !defined(CYW20721B2)
     /* Initialize wiced app */
     wiced_bt_app_init();
 #endif
