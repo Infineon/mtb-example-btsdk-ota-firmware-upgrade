@@ -1,5 +1,5 @@
 #
-# Copyright 2016-2022, Cypress Semiconductor Corporation (an Infineon company) or
+# Copyright 2016-2023, Cypress Semiconductor Corporation (an Infineon company) or
 # an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 #
 # This software, including source code, documentation and related
@@ -54,6 +54,8 @@ SUPPORTED_TARGETS = \
   CYW920819M2EVB-01 \
   CYW920820EVB-02 \
   CYBT-243053-EVAL \
+  Vela-IF820-INT-ANT-DVK \
+  Vela-IF820-EXT-ANT-DVK \
   CYBT-253059-EVAL \
   CYBT-223058-EVAL \
   CYBT-273063-EVAL \
